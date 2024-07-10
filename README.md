@@ -98,3 +98,17 @@ Run the script below to compile pieces from the VGMIDI-TVar dataset in a numpy a
 ```
 $ python3 compile_for_var_gen_vgmidi.py --path_train_indir vgmidi_encoded/train --path_test_indir vgmidi_encoded/test --path_outdir vgmidi_compiled --max_len 512 --task language_modeling
 ```
+
+## Theme-and-variation extraction
+Please follow the steps on this [page](https://github.com/ChenyuGAO-CS/theme-variation-data-preprocessing) if you are interested in running our theme-and-variation extraction algorithms on your datasets.
+
+## Citing this Work
+If you use our method in your research, please cite:
+```
+@inproceedings{gao2024variation,
+								title={Variation Transformer: New datasets, models, and comparative evaluation for symbolic music variation generation},
+								author={Chenyu Gao, Federico Reuben, and Tom Collins},
+								booktitle={the 25th International Society for Music Information Retrieval Conference},
+								year={2024}
+							  }
+```
