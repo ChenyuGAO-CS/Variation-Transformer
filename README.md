@@ -106,9 +106,9 @@ Please follow the steps on this [page](https://github.com/ChenyuGAO-CS/theme-var
 If you use our method in your research, please cite:
 ```
 @inproceedings{gao2024variation,
-								title={Variation Transformer: New datasets, models, and comparative evaluation for symbolic music variation generation},
-								author={Chenyu Gao, Federico Reuben, and Tom Collins},
-								booktitle={the 25th International Society for Music Information Retrieval Conference},
-								year={2024}
-							  }
+  title={Variation Transformer: New datasets, models, and comparative evaluation for symbolic music variation generation},
+  author={Chenyu Gao, Federico Reuben, and Tom Collins},
+  booktitle={the 25th International Society for Music Information Retrieval Conference},
+  year={2024}
+}
 ```
