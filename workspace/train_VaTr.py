@@ -5,7 +5,7 @@ import json
 import torch
 import argparse
 
-from encoder_var_gen import *
+from encoder import *
 from emopia import Emopia
 from var_transformer import Transformer
 from optimizer import CustomSchedule
