@@ -1,0 +1,13 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
+chorder==0.1.4
+Flask==2.2.2
+matplotlib==3.4.3
+miditoolkit==0.1.16
+muspy==0.5.0
+numpy==1.21.2
+plotext==5.2.8
+pretty_midi==0.2.9
+pymongo==4.3.2
+scikit_learn==1.1.3
+torch==1.12.1

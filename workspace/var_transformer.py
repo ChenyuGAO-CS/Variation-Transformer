@@ -1,0 +1,54 @@
+from tqdm import tqdm
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.distributions import Categorical
+
+from layer.var_attention import AttentionLayer
+from layer.var_attention import PositionalEmbedding
+from layer.var_attention import Embedding
+
+
+class Transformer(nn.Module):
+    def __init__(self, vocab, n_layer=6, n_head=8, d_model=512, d_head=64, d_inner=2048, dropout=0.1):
+        super(Transformer, self).__init__()
+        self.embedding = Embedding(vocab, d_model)
+        self.layers = nn.ModuleList()
+        for _ in range(n_layer):
+            self.layers.append(AttentionLayer(n_head, d_model, d_head, d_inner, dropout))
+        self.pe = PositionalEmbedding(d_model)
+        self.w_bias = nn.Parameter(torch.randn(n_head, 1, d_head), requires_grad=True)
+        self.r_bias = nn.Parameter(torch.randn(n_head, 1, d_head), requires_grad=True)
+        self.theme_var_bias = nn.Parameter(torch.randn(n_head, 1), requires_grad=True)
+        self.prob = nn.Sequential(nn.Linear(d_model, vocab))
+        self.drop = nn.Dropout(dropout)
+
+    def forward(self, x, theme_var_encoding):
+        embed = self.drop(self.embedding(x))
+        q_len = x.size(1)
+        positions = torch.arange(q_len - 1, -1, -1.0, device=embed.device, dtype=embed.dtype).repeat(embed.size(0), 1)
+        pe = self.drop(self.pe(positions))
+        # import pdb; pdb.set_trace()
+        for layer in self.layers:
+            embed = layer(embed, pe, self.w_bias, self.r_bias, theme_var_encoding, self.theme_var_bias)
+        output = self.prob(embed)
+        return output
+
+    def decode(self, x, length):
+        counter = 1
+        for _ in tqdm(range(length)):
+            embed = self.embedding(x)
+            q_len = x.size(1)
+            positions = torch.arange(q_len - 1,
+                                     -1,
+                                     -1.0,
+                                     device=embed.device,
+                                     dtype=embed.dtype).repeat(embed.size(0), 1)
+            pe = self.pe(positions)
+            for layer in self.layers:
+                embed = layer(embed, pe, self.w_bias, self.r_bias)
+            note = Categorical(F.softmax(self.prob(embed)[:, -1], dim=-1)).sample().unsqueeze(dim=1)
+            x = torch.cat((x, note), dim=-1)
+            counter += 1
+        return x
