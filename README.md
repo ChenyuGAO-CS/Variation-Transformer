@@ -13,3 +13,6 @@ https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model
 ```
 pip install requirements.txt
 ```
+
+## Reproducing Results
+To generate variations using models trained by us, please visit [this page](https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model) to download corresponding models and datasets. 
