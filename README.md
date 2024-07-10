@@ -5,3 +5,6 @@ This repository contains the source code to reproduce the results of the paper: 
 https://variation-transformer.glitch.me
 
 All the materials used in our listening study have been uploaded to our demo page too. 
+
+## Trained models and datasets
+https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model
