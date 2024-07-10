@@ -87,7 +87,14 @@ Then, compile the theme-and-variation pairs for model training. The token '520' 
 
 Each piece whose name starts with "songNum_phraseNum_0" will be used as a theme, which will be combined with all other pieces with the same song number, phrase number, key signature, and tempo. 
 
+Run the script below to compile pieces from the POP909-TVar dataset in a numpy array:
+
 ```
-$ python3 compile_for_var_gen.py --path_train_indir 909_encoded/train --path_test_indir 909_encoded/test --path_outdir 909_compiled --max_len 512 --task language_modeling
+$ python3 compile_for_var_gen_909.py --path_train_indir 909_encoded/train --path_test_indir 909_encoded/test --path_outdir 909_compiled --max_len 512 --task language_modeling
 ```
 
+Run the script below to compile pieces from the VGMIDI-TVar dataset in a numpy array
+
+```
+$ python3 compile_for_var_gen_vgmidi.py --path_train_indir vgmidi_encoded/train --path_test_indir vgmidi_encoded/test --path_outdir vgmidi_compiled --max_len 512 --task language_modeling
+```
