@@ -112,13 +112,24 @@ $ python3 compile_for_var_gen_vgmidi.py \
 ```
 
 **3. Model training**
+Using our training scripts (```train_VaTr.py```, ```train_MuTr.py```, ```train_FaTr.py```) to train variation generation models.
+
+An example usage:
+```
+$ python3 workspace/train_VaTr.py \
+          --train dataset/909_compiled/language_modeling_train.npz \
+          --test dataset/909_compiled/language_modeling_test.npz \
+          --seq_len 1025 --batch_size 16 \
+          --save_to trained_models/VaTr/VaTr_epoch_{}.pth \
+          --epochs 16
+```
 
 
 ## Theme-and-variation extraction
 Please follow the steps on this [page](https://github.com/ChenyuGAO-CS/theme-variation-data-preprocessing) if you are interested in running our theme-and-variation extraction algorithms on your datasets.
 
 ## Citing this Work
-If you use our method in your research, please cite:
+If you use our method or datasets in your research, please cite:
 ```
 @inproceedings{gao2024variation,
   title={{Variation Transformer}: New datasets, models, and comparative evaluation for symbolic music variation generation},
