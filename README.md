@@ -8,3 +8,8 @@ All the materials used in our listening study have been uploaded to our demo pag
 
 ## Trained models and datasets
 https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model
+
+## Dependencies
+```
+pip install requirements.txt
+```
