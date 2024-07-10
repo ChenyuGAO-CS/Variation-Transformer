@@ -54,6 +54,8 @@ $ python3 workspace/gen_FaTr_var_user_input.py --lm trained_models/FaTr_pop909_e
                            --save_to out/FaTr_variation1.mid \
                            --input dataset/POP909-TVar/test/052_B_0.mid
 ```
+### 3. Variation Markov
+Please follow the guidance on [this page](https://github.com/ChenyuGAO-CS/Variation-Markov) to use Variation Markov.
 
 ## Model Training
 ### 1. Download the datasets
@@ -90,14 +92,27 @@ Each piece whose name starts with "songNum_phraseNum_0" will be used as a theme,
 Run the script below to compile pieces from the POP909-TVar dataset in a numpy array:
 
 ```
-$ python3 compile_for_var_gen_909.py --path_train_indir 909_encoded/train --path_test_indir 909_encoded/test --path_outdir 909_compiled --max_len 512 --task language_modeling
+$ python3 compile_for_var_gen_909.py
+          --path_train_indir 909_encoded/train \
+          --path_test_indir 909_encoded/test \
+          --path_outdir 909_compiled \
+          --max_len 512
+          --task language_modeling
 ```
 
 Run the script below to compile pieces from the VGMIDI-TVar dataset in a numpy array
 
 ```
-$ python3 compile_for_var_gen_vgmidi.py --path_train_indir vgmidi_encoded/train --path_test_indir vgmidi_encoded/test --path_outdir vgmidi_compiled --max_len 512 --task language_modeling
+$ python3 compile_for_var_gen_vgmidi.py \
+          --path_train_indir vgmidi_encoded/train \
+          --path_test_indir vgmidi_encoded/test \
+          --path_outdir vgmidi_compiled \
+          --max_len 512 \
+          --task language_modeling
 ```
+
+**3. Model training**
+
 
 ## Theme-and-variation extraction
 Please follow the steps on this [page](https://github.com/ChenyuGAO-CS/theme-variation-data-preprocessing) if you are interested in running our theme-and-variation extraction algorithms on your datasets.
