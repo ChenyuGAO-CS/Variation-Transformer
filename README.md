@@ -13,6 +13,10 @@ https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model
 ```
 pip install -r requirements.txt
 ```
+To test/train the fast-Transformer model, you will also need to install: 
+```
+pip install pytorch-fast-transformers==0.4.0
+```
 
 ## Reproducing Results
 To generate variations using models trained by us, please visit [this page](https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model) to download corresponding models and datasets. 
