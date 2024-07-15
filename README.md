@@ -13,15 +13,18 @@ https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model
 ```
 pip install -r requirements.txt
 ```
-To test/train the fast-Transformer model, you will also need to install: 
+
+If you are interested in testing/training the fast-Transformer model, you will also need to install: 
 ```
 pip install pytorch-fast-transformers==0.4.0
 ```
 
 ## Reproducing Results
-To generate variations using models trained by us, please visit [this page](https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model) to download corresponding models and datasets. 
+To generate variations using models trained by us, please visit [this page](https://github.com/ChenyuGAO-CS/Variation-Transformer-Data-and-Model) to download corresponding models and datasets, and store them in corresponding folders (e.g., we store models in ```'./trained_models/'``` folder, and datasets in ```'./dataset/'``` folder). 
 
-We will show examples of how to use a model trained on the POP909-TVar dataset to generate a variation below. Please change ```--lm``` and ```--input``` if you would like to try models trained on the VGMIDI-TVar dataset or other themes as input. 
+We will show examples of how to use a model trained on the POP909-TVar dataset to generate a variation below. 
+
+Please change ```--lm``` and ```--input``` if you would like to try models trained on the VGMIDI-TVar dataset or other themes as input. 
 
 ### 1. Generate a variation by using the Variation Transformer
 Run the script ```gen_VaTr_var_user_input.py``` from the ```workspace``` folder. 
