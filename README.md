@@ -72,6 +72,10 @@ Please visit [this page](https://github.com/ChenyuGAO-CS/Variation-Transformer-D
 
 The pre-processing step consists of augmenting the data, encoding it with REMI and compiling the encoded pieces as a numpy array. Please find scripts for data pre-processing in the ```'dataset'``` folder.
 
+```
+$ cd dataset
+```
+
 Each theme-variation pair will be stored in a line of the numpy array, in which the token '520' will be used to separate the theme sequence and the variation sequence. 
 
 **2.1. Data Augmentation**
