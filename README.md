@@ -61,7 +61,7 @@ $ python3 workspace/gen_FaTr_var_user_input.py --lm trained_models/FaTr_pop909_e
                            --save_to out/FaTr_variation1.mid \
                            --input dataset/POP909-TVar/test/052_B_0.mid
 ```
-### 3. Variation Markov
+### 4. Variation Markov
 Please follow the guidance on [this page](https://github.com/ChenyuGAO-CS/Variation-Markov) to use Variation Markov.
 
 ## Model Training
