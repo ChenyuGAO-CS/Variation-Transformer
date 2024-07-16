@@ -70,7 +70,10 @@ Please visit [this page](https://github.com/ChenyuGAO-CS/Variation-Transformer-D
 
 ### 2. Data preprocessing for variation generation:
 
-The pre-processing step consists of augmenting the data, encoding it with REMI and compiling the encoded pieces as a numpy array. Please find scripts for data pre-processing in the ```'dataset'``` folder.
+The pre-processing step consists of augmenting the data, encoding it with REMI and compiling the encoded pieces as a numpy array. 
+Please find scripts for data pre-processing in the ```'dataset'``` folder.
+
+Go to the ```'dataset'``` folder:
 
 ```
 $ cd dataset
