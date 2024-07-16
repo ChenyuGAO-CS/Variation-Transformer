@@ -173,5 +173,10 @@ if __name__ == '__main__':
         print('> Training from checkpoint', args.model)
         model.load_state_dict(torch.load(args.model, map_location=device)["model_state"])
 
+    # Path to save model
+    save_path = args.save_to.rsplit("/", 1)[0]
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
+
     # Train model
     trained_model = train(model, train_dataloader, test_dataloader, epochs=args.epochs, lr=args.lr, save_to=args.save_to)
